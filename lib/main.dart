@@ -4,8 +4,9 @@ import 'package:grovia/core/constants/api_constant.dart';
 import 'package:grovia/core/constants/bloc_observer.dart';
 import 'package:grovia/core/constants/dio_helper.dart';
 import 'package:grovia/core/di/get_it.dart';
+import 'package:grovia/core/router/app_router.dart';
+import 'package:grovia/core/router/app_routes.dart';
 import 'package:grovia/core/theme/app_theme.dart';
-import 'package:grovia/features/auth/presentation/screens/register_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: RegisterScreen(),
+      initialRoute: AppRoutes.register,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

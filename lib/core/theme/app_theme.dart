@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:grovia/core/utils/app_colors.dart';
 
 class AppTheme {
-
-  // ️ LIGHT THEME
+  //  LIGHT THEME
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: AppColors.primary,
-
     scaffoldBackgroundColor: AppColors.background,
 
     colorScheme: const ColorScheme.light(
@@ -16,6 +14,8 @@ class AppTheme {
       secondary: AppColors.secondary,
       surface: AppColors.surface,
       error: AppColors.error,
+      onPrimary: AppColors.success,
+      onSurface: AppColors.black,
     ),
 
     appBarTheme: const AppBarTheme(
@@ -23,18 +23,21 @@ class AppTheme {
       foregroundColor: AppColors.black,
       elevation: 0,
       centerTitle: true,
+      iconTheme: IconThemeData(color: AppColors.black),
     ),
 
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         color: AppColors.black,
-        fontSize: 26,
+        fontSize: 28,
         fontWeight: FontWeight.bold,
+        letterSpacing: -0.5,
       ),
       headlineMedium: TextStyle(
         color: AppColors.black,
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        letterSpacing: -0.2,
       ),
       titleLarge: TextStyle(
         color: AppColors.black,
@@ -49,24 +52,36 @@ class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
         foregroundColor: AppColors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
     ),
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.extraLightGrey,
+      prefixIconColor: AppColors.grey,
+      suffixIconColor: AppColors.grey,
+      labelStyle: const TextStyle(color: AppColors.grey),
+      hintStyle: const TextStyle(color: AppColors.lightGrey),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.border),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.border, width: 1),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.border),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.border, width: 1),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.primary),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.error, width: 1),
       ),
     ),
   );
@@ -76,7 +91,6 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: AppColors.primary,
-
     scaffoldBackgroundColor: AppColors.darkBackground,
 
     colorScheme: const ColorScheme.dark(
@@ -84,6 +98,8 @@ class AppTheme {
       secondary: AppColors.secondary,
       surface: AppColors.darkSurface,
       error: AppColors.error,
+      onPrimary: AppColors.white,
+      onSurface: AppColors.white,
     ),
 
     appBarTheme: const AppBarTheme(
@@ -91,18 +107,21 @@ class AppTheme {
       foregroundColor: AppColors.white,
       elevation: 0,
       centerTitle: true,
+      iconTheme: IconThemeData(color: AppColors.white),
     ),
 
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         color: AppColors.white,
-        fontSize: 26,
+        fontSize: 28,
         fontWeight: FontWeight.bold,
+        letterSpacing: -0.5,
       ),
       headlineMedium: TextStyle(
         color: AppColors.white,
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        letterSpacing: -0.2,
       ),
       titleLarge: TextStyle(
         color: AppColors.white,
@@ -117,24 +136,36 @@ class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryLight,
         foregroundColor: AppColors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
     ),
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.darkSurface,
+      prefixIconColor: AppColors.grey,
+      suffixIconColor: AppColors.grey,
+      labelStyle: const TextStyle(color: AppColors.grey),
+      hintStyle: const TextStyle(color: AppColors.grey),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.border),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.darkSurface, width: 1),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.border),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.darkSurface, width: 1),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.primaryLight),
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.primaryLight, width: 1.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColors.error, width: 1),
       ),
     ),
   );

@@ -9,9 +9,6 @@ class ApiConstant {
   static const String resetPasswordEndpoint = '/api/auth/reset-password';
   static const String deleteAccountEndpoint = '/api/auth/delete-account';
   static const String changePasswordEndpoint = '/api/auth/change-password';
-  static const String forgotPasswordEndPoint = '/api/auth/forgot-password';
-  static const String verifyOtpEndPoint = '/api/auth/verify-otp';
-  static const String resetPasswordEndPoint = '/api/auth/reset-password';
 
   // Home
   static const String categoriesEndpoint = '/api/categories';
