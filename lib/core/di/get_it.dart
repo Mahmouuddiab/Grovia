@@ -3,6 +3,8 @@ import 'package:grovia/features/auth/data/data%20source/auth_remote_ds.dart';
 import 'package:grovia/features/auth/data/data%20source/auth_remote_ds_impl.dart';
 import 'package:grovia/features/auth/data/repository/auth_repository_impl.dart';
 import 'package:grovia/features/auth/domain/repository/auth_repository.dart';
+import 'package:grovia/features/auth/domain/usecase/forgot_password_usecase.dart';
+import 'package:grovia/features/auth/domain/usecase/login_usecase.dart';
 import 'package:grovia/features/auth/domain/usecase/register_usecase.dart';
 import 'package:grovia/features/auth/presentation/cubit/auth_cubit.dart';
 
@@ -13,5 +15,7 @@ void setupLocator(){
   sl.registerLazySingleton<AuthRemoteDs>(() => AuthRemoteDsImpl());
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(remote: sl()));
   sl.registerLazySingleton(()=> RegisterUseCase(sl()));
-  sl.registerFactory(()=> AuthCubit(sl()));
+  sl.registerLazySingleton(()=> LoginUseCase(sl()));
+  sl.registerLazySingleton(()=> ForgotPasswordUseCase(sl()));
+  sl.registerFactory(()=> AuthCubit(sl(),sl(),sl()));
 }
